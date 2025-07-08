@@ -1,4 +1,3 @@
-from listado_respuestas import ListadoRespuestas
 
 class Usuario:
     def __init__(self, correo: str, edad: int, region: int):
@@ -35,5 +34,6 @@ class Usuario:
 
     ## Método para contestar una encuesta
     def contestar_encuesta(self, encuesta, respuestas: list[int]):
-        listado = ListadoRespuestas(self, respuestas)
+        from listado_respuestas import ListadoRespuestas  
+        listado = ListadoRespuestas(self, respuestas) ### generaba inicialmente problemas de bucles
         encuesta.agregar_respuestas(listado)
